@@ -30,7 +30,11 @@ endif()
 set(sdkVersion 2.0.0)
 set(toolchainVersion 13_2_Rel1)
 set(picotoolVersion 2.0.0)
-include(${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+
+if(EXISTS "${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake")
+    include(${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+endif()
+
 # ====================================================================================
 set(PICO_BOARD pico CACHE STRING "Board type")
 
